@@ -1,6 +1,6 @@
 # Obsidian iOS Git Sync via iSH
 
-Getting Obsidian to sync with GitHub on iOS is not straightforward. The plugin behaves differently on mobile, iSH has memory constraints, and there are a few failure modes that will cost you time if you don't know about them upfront. This is a practical walkthrough of what actually works.
+Getting Obsidian to sync with GitHub on iOS is not SO MUCH PAIN. The plugin behaves differently on mobile, iSH has memory constraints, and there are a few failure modes that will cost you time if you don't know about them upfront. This is a practical walkthrough of what actually works.
 
 ---
 
@@ -35,7 +35,13 @@ apk add git
 
 ### 2. Mount your Obsidian vault folder
 
-In iSH, tap the settings icon > Mounts > add a folder. Navigate to your Obsidian vault location under "On My iPhone". This makes the vault accessible from iSH at a path like `/root/obsidian`.
+```sh
+cd ~
+mkdir obsidian
+mount -t ios . obsidian
+```
+
+This triggers the iOS file picker. Select your Obsidian vault folder from "On My iPhone". The vault is now accessible from iSH at `~/obsidian`.
 
 > Do not use iCloud Drive as your vault location. It conflicts with iSH file writes.
 
